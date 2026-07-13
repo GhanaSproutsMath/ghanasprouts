@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://8f7o3ltutuvj"]
+
+[ext_resource type="Script" path="res://sprout label.gd" id="1_3hxsb"]
+[ext_resource type="Script" path="res://sprout_node.gd" id="1_em6ky"]
+[ext_resource type="Script" path="res://circle.gd" id="3_eqea2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ufgw"]
+font_color = Color(0, 0, 0, 1)
+outline_size = 6
+shadow_size = 6
+shadow_color = Color(0.0392157, 0.0392157, 0.0392157, 0.666667)
+
+[node name="sprout node" type="MarginContainer" groups=["sprout nodes"]]
+custom_minimum_size = Vector2(45, 45)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -21.0
+offset_right = 22.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_em6ky")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+color = Color(1, 0, 0, 1)
+
+[node name="sprout label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
+label_settings = SubResource("LabelSettings_6ufgw")
+script = ExtResource("1_3hxsb")
+
+[node name="circle" type="Node2D" parent="sprout label"]
+show_behind_parent = true
+position = Vector2(5, 12)
+script = ExtResource("3_eqea2")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

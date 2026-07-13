@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bovb6pvxjklhx"]
+
+[ext_resource type="PackedScene" uid="uid://8f7o3ltutuvj" path="res://sprout_node.tscn" id="1_3qf53"]
+[ext_resource type="Script" path="res://line_and_label.gd" id="1_cirno"]
+
+[node name="line_and_label" type="Node2D"]
+script = ExtResource("1_cirno")
+
+[node name="Line2D" type="Line2D" parent="."]
+z_index = -1
+width = 5.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="sprout node" parent="." instance=ExtResource("1_3qf53")]

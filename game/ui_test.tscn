@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5xhtrylkcule"]
+
+[ext_resource type="PackedScene" uid="uid://b6xvbmfph611k" path="res://organizer.tscn" id="1_qwxbp"]
+[ext_resource type="PackedScene" uid="uid://8f7o3ltutuvj" path="res://sprout_node.tscn" id="2_5pg1e"]
+
+[node name="ui test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="organizer" parent="." instance=ExtResource("1_qwxbp")]
+
+[node name="sprout node" parent="." instance=ExtResource("2_5pg1e")]
+layout_mode = 1
+
+[connection signal="mouse_entered" from="sprout node" to="organizer" method="determine_start_vs_end"]

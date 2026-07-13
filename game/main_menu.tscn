@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cyquy0ohs2wf2"]
+
+[ext_resource type="Script" uid="uid://ct1ajlma68fxd" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="main_menu" type="PanelContainer" unique_id=481936313]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 236.0
+offset_top = 247.0
+offset_right = -264.0
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_06t4h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1104503155]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1224450084]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Ghana Sprouts Game!"
+
+[node name="Basic" type="Button" parent="VBoxContainer" unique_id=1333061811]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start Basic"
+
+[node name="custom" type="Button" parent="VBoxContainer" unique_id=1842038698]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Custom Game"
+
+[node name="info" type="Button" parent="VBoxContainer" unique_id=948957252]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Info"
+
+[connection signal="pressed" from="VBoxContainer/Basic" to="." method="_on_basic_pressed"]
+[connection signal="pressed" from="VBoxContainer/custom" to="." method="_on_custom_pressed"]
+[connection signal="pressed" from="VBoxContainer/info" to="." method="_on_info_pressed"]
