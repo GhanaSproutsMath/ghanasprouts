@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3ym6yyaddgwx"]
+
+[ext_resource type="Script" path="res://test_2d.gd" id="1_sodms"]
+[ext_resource type="PackedScene" uid="uid://8f7o3ltutuvj" path="res://sprout_node.tscn" id="1_yyl81"]
+[ext_resource type="PackedScene" uid="uid://b6xvbmfph611k" path="res://organizer.tscn" id="2_e2bhj"]
+[ext_resource type="PackedScene" uid="uid://bsiwsh8rdulx8" path="res://player.tscn" id="4_aj7rq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tfr6s"]
+font_color = Color(0, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ka6qw"]
+font_color = Color(1, 0, 0, 1)
+
+[node name="test 2d" type="Node2D"]
+script = ExtResource("1_sodms")
+
+[node name="organizer" parent="." instance=ExtResource("2_e2bhj")]
+
+[node name="player" parent="." instance=ExtResource("4_aj7rq")]
+pname = "p1"
+
+[node name="name" parent="player" index="0"]
+text = "p1
+"
+label_settings = SubResource("LabelSettings_tfr6s")
+
+[node name="player2" parent="." instance=ExtResource("4_aj7rq")]
+offset_left = 1042.0
+offset_top = 3.0
+offset_right = 1042.0
+offset_bottom = 3.0
+pname = "p2"
+
+[node name="name" parent="player2" index="0"]
+text = "p2
+"
+label_settings = SubResource("LabelSettings_ka6qw")
+
+[node name="node 1" parent="." instance=ExtResource("1_yyl81")]
+offset_left = 264.0
+offset_top = 100.0
+offset_right = 274.0
+offset_bottom = 123.0
+
+[node name="node 2" parent="." instance=ExtResource("1_yyl81")]
+offset_left = 963.0
+offset_top = 504.0
+offset_right = 973.0
+offset_bottom = 527.0
+
+[editable path="player"]
+[editable path="player2"]

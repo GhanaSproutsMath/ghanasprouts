@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsiwsh8rdulx8"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_203th"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5k4ix"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmbrg"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q60rb"]
+font_color = Color(0.027451, 0.027451, 0.027451, 1)
+
+[node name="player" type="Control" groups=["players"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_203th")
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 3.0
+offset_right = 64.0
+offset_bottom = 26.0
+text = "Name
+"
+label_settings = SubResource("LabelSettings_5k4ix")
+
+[node name="header" type="Label" parent="name"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 20.0
+offset_right = 61.0
+offset_bottom = 43.0
+text = "Score is"
+label_settings = SubResource("LabelSettings_rmbrg")
+
+[node name="score" type="Label" parent="name"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 20.0
+offset_right = 102.0
+offset_bottom = 43.0
+text = "0"
+label_settings = SubResource("LabelSettings_q60rb")

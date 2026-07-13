@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://b3ym6yyaddgwx"]
+
+[ext_resource type="Script" uid="uid://crtn4gbi1v7pg" path="res://test_2d.gd" id="1_sodms"]
+[ext_resource type="PackedScene" uid="uid://8f7o3ltutuvj" path="res://sprout_node.tscn" id="1_yyl81"]
+[ext_resource type="PackedScene" uid="uid://b6xvbmfph611k" path="res://organizer.tscn" id="2_e2bhj"]
+[ext_resource type="PackedScene" uid="uid://bsiwsh8rdulx8" path="res://player.tscn" id="4_aj7rq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tfr6s"]
+font_color = Color(0, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ka6qw"]
+font_color = Color(1, 0, 0, 1)
+
+[node name="test 2d" type="Node2D" unique_id=1014102622]
+script = ExtResource("1_sodms")
+
+[node name="organizer" parent="." unique_id=12116726 instance=ExtResource("2_e2bhj")]
+
+[node name="player" parent="." unique_id=1020836401 instance=ExtResource("4_aj7rq")]
+pname = "p1"
+
+[node name="name" parent="player" index="0"]
+text = "p1
+"
+label_settings = SubResource("LabelSettings_tfr6s")
+
+[node name="player2" parent="." unique_id=427584988 instance=ExtResource("4_aj7rq")]
+offset_left = 1673.0
+offset_top = 7.0
+offset_right = 1673.0
+offset_bottom = 7.0
+pname = "p2"
+
+[node name="name" parent="player2" index="0"]
+text = "p2
+"
+label_settings = SubResource("LabelSettings_ka6qw")
+
+[node name="node 1" parent="." unique_id=1242563634 instance=ExtResource("1_yyl81")]
+offset_left = 264.0
+offset_top = 100.0
+offset_right = 274.0
+offset_bottom = 123.0
+
+[node name="node 3" parent="." unique_id=1394847154 instance=ExtResource("1_yyl81")]
+offset_left = 1405.0
+offset_top = 265.0
+offset_right = 1415.0
+offset_bottom = 288.0
+
+[node name="node 4" parent="." unique_id=1665954380 instance=ExtResource("1_yyl81")]
+offset_left = 469.0
+offset_top = 825.0
+offset_right = 479.0
+offset_bottom = 848.0
+
+[node name="node 2" parent="." unique_id=799880719 instance=ExtResource("1_yyl81")]
+offset_left = 1404.0
+offset_top = 849.0
+offset_right = 1414.0
+offset_bottom = 872.0
+
+[node name="Button" type="Button" parent="." unique_id=683650942]
+offset_left = 5.0
+offset_top = 1046.0
+offset_right = 92.0
+offset_bottom = 1077.0
+text = "End Game"
+
+[node name="menu" type="Button" parent="." unique_id=2021201394]
+offset_left = 1827.0
+offset_top = 1046.0
+offset_right = 1914.0
+offset_bottom = 1077.0
+text = "menu
+"
+
+[connection signal="pressed" from="Button" to="organizer" method="_on_button_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+
+[editable path="player"]
+[editable path="player2"]

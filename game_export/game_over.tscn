@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dblmu2tw5wxsh"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_fq1qc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8kjvn"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_djt7m"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="game over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fq1qc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 539.0
+offset_right = 879.0
+offset_bottom = 628.0
+
+[node name="Win" type="Label" parent="ColorRect"]
+visible = false
+layout_mode = 0
+offset_left = 102.0
+offset_top = 422.0
+offset_right = 628.0
+offset_bottom = 474.0
+text = "Congratulations, The game is now over. The winning player is "
+label_settings = SubResource("LabelSettings_8kjvn")
+
+[node name="Tie" type="Label" parent="ColorRect"]
+visible = false
+layout_mode = 0
+offset_left = 60.0
+offset_top = 421.0
+offset_right = 1219.0
+offset_bottom = 466.0
+text = "Congratulations, the game is now over. The scores are tied! Good job P1, P2"
+label_settings = SubResource("LabelSettings_djt7m")
